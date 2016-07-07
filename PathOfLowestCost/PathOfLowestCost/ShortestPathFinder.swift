@@ -6,10 +6,15 @@ class ShortestPathFinder{
   var columns = 0
   
   func addRow(row: String){
-    for numberString in row.componentsSeparatedByString(" "){
+    let separatedRow = row.componentsSeparatedByString(" ")
+    
+    if (columns == 0){
+      columns = separatedRow.count
+    }
+    
+    for numberString in separatedRow{
       board.append(Int(numberString)!)
     }
     rows += 1
-    columns = 1
   }
 }

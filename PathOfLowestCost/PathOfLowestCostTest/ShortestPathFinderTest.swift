@@ -1,7 +1,8 @@
 import XCTest
 
 class ShortestPathFinderTest: XCTestCase {
-  func testShortestPathCanAddASimpleRow() {
+  
+  func testAddRowASimpleRow() {
     let shortestPathFinder = ShortestPathFinder()
     
     shortestPathFinder.addRow("1")

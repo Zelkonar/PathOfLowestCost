@@ -3,25 +3,25 @@ import XCTest
 class ShortestPathFinderTest: XCTestCase {
   var shortestPathFinder = ShortestPathFinder()
   
-  func testAddRowASimpleRow() {
+  func testAddRowASimpleRow(){
     shortestPathFinder.addRow("1")
     
     XCTAssertEqual(shortestPathFinder.board, [1])
   }
   
-  func testAddRowWithTwoValues() {
+  func testAddRowWithTwoValues(){
     shortestPathFinder.addRow("2 3")
     
     XCTAssertEqual(shortestPathFinder.board, [2, 3])
   }
   
-  func testAddRowUpdatesRowAttribute() {
+  func testAddRowUpdatesRowAttribute(){
     shortestPathFinder.addRow("2 3")
     
     XCTAssertEqual(shortestPathFinder.rows, 1)
   }
   
-  func testAddRowTwiceUpdatesRowAttributeToTwo() {
+  func testAddRowTwiceUpdatesRowAttributeToTwo(){
     shortestPathFinder.addRow("1 2")
     shortestPathFinder.addRow("3 4")
     

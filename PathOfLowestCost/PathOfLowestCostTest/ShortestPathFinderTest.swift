@@ -29,8 +29,6 @@ class ShortestPathFinderTest: XCTestCase {
   }
   
   func testColumnAttributeInitiallyZero(){
-    shortestPathFinder.addRow("1 2")
-    
     XCTAssertEqual(shortestPathFinder.columns, 0)
   }
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		79D314EB1D2DED3C0038D9D3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314EA1D2DED3C0038D9D3 /* main.swift */; };
+		79D314FE1D2DEE130038D9D3 /* ShortestPathFinderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314FD1D2DEE130038D9D3 /* ShortestPathFinderTest.swift */; };
+		79D315001D2DEF390038D9D3 /* ShortestPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314FF1D2DEF390038D9D3 /* ShortestPathFinder.swift */; };
+		79D315011D2DEF3C0038D9D3 /* ShortestPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314FF1D2DEF390038D9D3 /* ShortestPathFinder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +28,21 @@
 /* Begin PBXFileReference section */
 		79D314E71D2DED3C0038D9D3 /* PathOfLowestCost */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PathOfLowestCost; sourceTree = BUILT_PRODUCTS_DIR; };
 		79D314EA1D2DED3C0038D9D3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		79D314F51D2DEDF30038D9D3 /* PathOfLowestCostTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PathOfLowestCostTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79D314F91D2DEDF30038D9D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79D314FD1D2DEE130038D9D3 /* ShortestPathFinderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortestPathFinderTest.swift; sourceTree = "<group>"; };
+		79D314FF1D2DEF390038D9D3 /* ShortestPathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortestPathFinder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		79D314E41D2DED3C0038D9D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79D314F21D2DEDF30038D9D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				79D314E91D2DED3C0038D9D3 /* PathOfLowestCost */,
+				79D314F61D2DEDF30038D9D3 /* PathOfLowestCostTest */,
 				79D314E81D2DED3C0038D9D3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				79D314E71D2DED3C0038D9D3 /* PathOfLowestCost */,
+				79D314F51D2DEDF30038D9D3 /* PathOfLowestCostTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +74,18 @@
 			isa = PBXGroup;
 			children = (
 				79D314EA1D2DED3C0038D9D3 /* main.swift */,
+				79D314FF1D2DEF390038D9D3 /* ShortestPathFinder.swift */,
 			);
 			path = PathOfLowestCost;
+			sourceTree = "<group>";
+		};
+		79D314F61D2DEDF30038D9D3 /* PathOfLowestCostTest */ = {
+			isa = PBXGroup;
+			children = (
+				79D314FD1D2DEE130038D9D3 /* ShortestPathFinderTest.swift */,
+				79D314F91D2DEDF30038D9D3 /* Info.plist */,
+			);
+			path = PathOfLowestCostTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +108,23 @@
 			productReference = 79D314E71D2DED3C0038D9D3 /* PathOfLowestCost */;
 			productType = "com.apple.product-type.tool";
 		};
+		79D314F41D2DEDF30038D9D3 /* PathOfLowestCostTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79D314FA1D2DEDF30038D9D3 /* Build configuration list for PBXNativeTarget "PathOfLowestCostTest" */;
+			buildPhases = (
+				79D314F11D2DEDF30038D9D3 /* Sources */,
+				79D314F21D2DEDF30038D9D3 /* Frameworks */,
+				79D314F31D2DEDF30038D9D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PathOfLowestCostTest;
+			productName = PathOfLowestCostTest;
+			productReference = 79D314F51D2DEDF30038D9D3 /* PathOfLowestCostTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +136,9 @@
 				ORGANIZATIONNAME = JJWolf2015;
 				TargetAttributes = {
 					79D314E61D2DED3C0038D9D3 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					79D314F41D2DEDF30038D9D3 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -110,16 +156,37 @@
 			projectRoot = "";
 			targets = (
 				79D314E61D2DED3C0038D9D3 /* PathOfLowestCost */,
+				79D314F41D2DEDF30038D9D3 /* PathOfLowestCostTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		79D314F31D2DEDF30038D9D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		79D314E31D2DED3C0038D9D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79D315001D2DEF390038D9D3 /* ShortestPathFinder.swift in Sources */,
 				79D314EB1D2DED3C0038D9D3 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79D314F11D2DEDF30038D9D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79D315011D2DEF3C0038D9D3 /* ShortestPathFinder.swift in Sources */,
+				79D314FE1D2DEE130038D9D3 /* ShortestPathFinderTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +289,28 @@
 			};
 			name = Release;
 		};
+		79D314FB1D2DEDF30038D9D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PathOfLowestCostTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JeffreyWolf2015.PathOfLowestCostTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		79D314FC1D2DEDF30038D9D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PathOfLowestCostTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JeffreyWolf2015.PathOfLowestCostTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -239,6 +328,14 @@
 			buildConfigurations = (
 				79D314EF1D2DED3C0038D9D3 /* Debug */,
 				79D314F01D2DED3C0038D9D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		79D314FA1D2DEDF30038D9D3 /* Build configuration list for PBXNativeTarget "PathOfLowestCostTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79D314FB1D2DEDF30038D9D3 /* Debug */,
+				79D314FC1D2DEDF30038D9D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

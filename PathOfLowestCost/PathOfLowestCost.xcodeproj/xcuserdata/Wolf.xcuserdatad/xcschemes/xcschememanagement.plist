@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>PathOfLowestCostTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>79D314E61D2DED3C0038D9D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>79D314F41D2DEDF30038D9D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

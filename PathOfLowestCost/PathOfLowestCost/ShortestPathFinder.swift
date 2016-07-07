@@ -10,5 +10,6 @@ class ShortestPathFinder{
       board.append(Int(numberString)!)
     }
     rows += 1
+    columns = 1
   }
 }

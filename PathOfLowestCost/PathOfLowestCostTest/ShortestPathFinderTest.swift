@@ -31,4 +31,10 @@ class ShortestPathFinderTest: XCTestCase {
   func testColumnAttributeInitiallyZero(){
     XCTAssertEqual(shortestPathFinder.columns, 0)
   }
+  
+  func testAddRowUpdatesColumnAttribute(){
+    shortestPathFinder.addRow("1")
+    
+    XCTAssertEqual(shortestPathFinder.columns, 1)
+  }
 }

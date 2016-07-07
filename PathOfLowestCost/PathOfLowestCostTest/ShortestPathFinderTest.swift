@@ -20,4 +20,11 @@ class ShortestPathFinderTest: XCTestCase {
     
     XCTAssertEqual(shortestPathFinder.rows, 1)
   }
+  
+  func testAddRowTwiceUpdatesRowAttributeToTwo() {
+    shortestPathFinder.addRow("1 2")
+    shortestPathFinder.addRow("3 4")
+    
+    XCTAssertEqual(shortestPathFinder.rows, 2)
+  }
 }

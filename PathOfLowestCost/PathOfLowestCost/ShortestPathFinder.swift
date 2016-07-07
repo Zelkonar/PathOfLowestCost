@@ -8,6 +8,6 @@ class ShortestPathFinder{
     for numberString in row.componentsSeparatedByString(" "){
       board.append(Int(numberString)!)
     }
-    rows = 1
+    rows += 1
   }
 }

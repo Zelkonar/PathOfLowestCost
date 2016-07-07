@@ -1,9 +1,9 @@
 import Foundation
 
 class ShortestPathFinder{
-	var board = [Int]()
-	
-	func addRow(row: String){
-		board = [1]
-	}
+  var board = [Int]()
+
+  func addRow(row: String){
+    board = [1]
+  }
 }

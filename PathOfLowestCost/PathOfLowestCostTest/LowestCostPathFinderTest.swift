@@ -11,4 +11,10 @@ class LowestCostPathFinderTest: XCTestCase {
     
     XCTAssert(lowestCostPathFinder.board === board)
   }
+  
+  func testMadeItToEndOfBoardIsInitiallyFalse(){
+    let lowestCostPathFinder = LowestCostPathFinder()
+    
+    XCTAssertFalse(lowestCostPathFinder.madeToOtherSideOfBoard)
+  }
 }

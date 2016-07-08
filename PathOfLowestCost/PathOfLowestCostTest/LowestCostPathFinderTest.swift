@@ -24,4 +24,8 @@ class LowestCostPathFinderTest: XCTestCase {
   func testTotalCostInitiallyZero(){
     XCTAssertNil(lowestCostPathFinder.lowestTotalCost)
   }
+  
+  func testLowestPathInitiallyNil(){
+    XCTAssertNil(lowestCostPathFinder.pathOfLowestCost)
+  }
 }

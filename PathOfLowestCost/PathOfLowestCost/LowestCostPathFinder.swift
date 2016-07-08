@@ -1,5 +1,5 @@
 import Foundation
 
-class ShortestPathFinder{
+class LowestCostPathFinder{
   var board = Board()
 }

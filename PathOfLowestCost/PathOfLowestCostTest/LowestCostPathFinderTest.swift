@@ -1,4 +1,4 @@
 import XCTest
 
-class ShortestPathFinderTest: XCTestCase {
+class LowestCostPathFinderTest: XCTestCase {
 }

@@ -1,13 +1,11 @@
 import Foundation
 
 class LowestCostPathFinder{
-  var board: Board
+  var board: Board?
   var madeToOtherSideOfBoard = false
   var lowestTotalCost: Int?
   
-  init(){
-    self.board = Board()
-  }
+  init(){}
   
   init(board: Board){
     self.board = board

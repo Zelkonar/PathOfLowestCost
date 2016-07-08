@@ -2,13 +2,13 @@ import XCTest
 
 class LowestCostPathFinderTest: XCTestCase {
   var lowestCostPathFinder = LowestCostPathFinder()
+  var board = Board()
   
   func testBoardIsInitiallyNil(){
     XCTAssertNil(lowestCostPathFinder.board)
   }
   
   func testLowestCostPathFinderHasInitializerForBoard(){
-    let board = Board()
     board.addRow("1")
     board.addRow("2")
     
@@ -30,7 +30,6 @@ class LowestCostPathFinderTest: XCTestCase {
   }
   
   func testFindLowestPathWithSimpleBoard(){
-    let board = Board()
     board.addRow("1")
     lowestCostPathFinder.board = board
     

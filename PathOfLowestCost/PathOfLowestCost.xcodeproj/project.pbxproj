@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		79D314EB1D2DED3C0038D9D3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314EA1D2DED3C0038D9D3 /* main.swift */; };
-		79D314FE1D2DEE130038D9D3 /* ShortestPathFinderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314FD1D2DEE130038D9D3 /* ShortestPathFinderTest.swift */; };
-		79D315001D2DEF390038D9D3 /* ShortestPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314FF1D2DEF390038D9D3 /* ShortestPathFinder.swift */; };
-		79D315011D2DEF3C0038D9D3 /* ShortestPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314FF1D2DEF390038D9D3 /* ShortestPathFinder.swift */; };
+		79D314FE1D2DEE130038D9D3 /* LowestCostPathFinderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314FD1D2DEE130038D9D3 /* LowestCostPathFinderTest.swift */; };
+		79D315001D2DEF390038D9D3 /* LowestCostPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314FF1D2DEF390038D9D3 /* LowestCostPathFinder.swift */; };
+		79D315011D2DEF3C0038D9D3 /* LowestCostPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314FF1D2DEF390038D9D3 /* LowestCostPathFinder.swift */; };
 		79D315031D2DFFCF0038D9D3 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D315021D2DFFCF0038D9D3 /* Board.swift */; };
 		79D315051D2DFFF80038D9D3 /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D315041D2DFFF80038D9D3 /* BoardTests.swift */; };
 		79D315061D2E005C0038D9D3 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D315021D2DFFCF0038D9D3 /* Board.swift */; };
@@ -36,8 +36,8 @@
 		79D314EA1D2DED3C0038D9D3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		79D314F51D2DEDF30038D9D3 /* PathOfLowestCostTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PathOfLowestCostTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79D314F91D2DEDF30038D9D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79D314FD1D2DEE130038D9D3 /* ShortestPathFinderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortestPathFinderTest.swift; sourceTree = "<group>"; };
-		79D314FF1D2DEF390038D9D3 /* ShortestPathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortestPathFinder.swift; sourceTree = "<group>"; };
+		79D314FD1D2DEE130038D9D3 /* LowestCostPathFinderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowestCostPathFinderTest.swift; sourceTree = "<group>"; };
+		79D314FF1D2DEF390038D9D3 /* LowestCostPathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowestCostPathFinder.swift; sourceTree = "<group>"; };
 		79D315021D2DFFCF0038D9D3 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		79D315041D2DFFF80038D9D3 /* BoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
 		79D315071D2E015C0038D9D3 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				79D314EA1D2DED3C0038D9D3 /* main.swift */,
-				79D314FF1D2DEF390038D9D3 /* ShortestPathFinder.swift */,
+				79D314FF1D2DEF390038D9D3 /* LowestCostPathFinder.swift */,
 				79D315021D2DFFCF0038D9D3 /* Board.swift */,
 				79D315071D2E015C0038D9D3 /* Tile.swift */,
 			);
@@ -96,7 +96,7 @@
 			children = (
 				79D315091D2E01830038D9D3 /* TileTest.swift */,
 				79D315041D2DFFF80038D9D3 /* BoardTests.swift */,
-				79D314FD1D2DEE130038D9D3 /* ShortestPathFinderTest.swift */,
+				79D314FD1D2DEE130038D9D3 /* LowestCostPathFinderTest.swift */,
 				79D314F91D2DEDF30038D9D3 /* Info.plist */,
 			);
 			path = PathOfLowestCostTest;
@@ -190,7 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79D315001D2DEF390038D9D3 /* ShortestPathFinder.swift in Sources */,
+				79D315001D2DEF390038D9D3 /* LowestCostPathFinder.swift in Sources */,
 				79D314EB1D2DED3C0038D9D3 /* main.swift in Sources */,
 				79D315031D2DFFCF0038D9D3 /* Board.swift in Sources */,
 				79D315081D2E015C0038D9D3 /* Tile.swift in Sources */,
@@ -201,9 +201,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79D315011D2DEF3C0038D9D3 /* ShortestPathFinder.swift in Sources */,
+				79D315011D2DEF3C0038D9D3 /* LowestCostPathFinder.swift in Sources */,
 				79D3150A1D2E01830038D9D3 /* TileTest.swift in Sources */,
-				79D314FE1D2DEE130038D9D3 /* ShortestPathFinderTest.swift in Sources */,
+				79D314FE1D2DEE130038D9D3 /* LowestCostPathFinderTest.swift in Sources */,
 				79D3150B1D2E026C0038D9D3 /* Tile.swift in Sources */,
 				79D315061D2E005C0038D9D3 /* Board.swift in Sources */,
 				79D315051D2DFFF80038D9D3 /* BoardTests.swift in Sources */,

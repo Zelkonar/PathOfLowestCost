@@ -21,6 +21,6 @@ class LowestCostPathFinderTest: XCTestCase {
   func testTotalCostInitiallyZero(){
     let lowestCostPathFinder = LowestCostPathFinder()
     
-    XCTAssertEqual(lowestCostPathFinder.totalCost, 0)
+    XCTAssertNil(lowestCostPathFinder.lowestTotalCost)
   }
 }

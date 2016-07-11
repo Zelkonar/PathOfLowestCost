@@ -1,6 +1,6 @@
 import Foundation
 
-class Board{
+class Board : Equatable{
   var tiles = [Tile]()
   private(set) var rows = 0
   private(set) var columns = 0
@@ -21,4 +21,10 @@ class Board{
   func GetTileFromNumberString(number: String) -> Tile{
     return Tile(value: Int(number)!)
   }
+}
+
+func ==(lhs: Board, rhs: Board) -> Bool{
+  return (lhs.tiles == rhs.tiles) &&
+         (lhs.rows == rhs.rows) &&
+         (lhs.columns == rhs.columns)
 }

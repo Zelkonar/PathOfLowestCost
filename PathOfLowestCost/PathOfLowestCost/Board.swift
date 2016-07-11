@@ -1,7 +1,7 @@
 import Foundation
 
 class Board : Equatable{
-  var tiles = [Tile]()
+  private(set) var tiles = [Tile]()
   private(set) var rows = 0
   private(set) var columns = 0
   

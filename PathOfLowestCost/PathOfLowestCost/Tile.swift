@@ -1,7 +1,7 @@
 import Foundation
 
 class Tile{
-  var value: Int
+  let value: Int
   
   init(){
     self.value = 0

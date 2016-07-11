@@ -4,15 +4,19 @@ class BoardTests: XCTestCase {
   var board = Board()
   
   func testAddRowASimpleRow(){
+    let expected = buildTileArray([1])
+    
     board.addRow("1")
     
-    XCTAssertEqual(board.tiles, [1])
+    XCTAssertEqual(board.tiles, expected)
   }
   
   func testAddRowWithTwoValues(){
+    let expected = buildTileArray([2, 3])
+    
     board.addRow("2 3")
     
-    XCTAssertEqual(board.tiles, [2, 3])
+    XCTAssertEqual(board.tiles, expected)
   }
   
   func testAddRowUpdatesRowAttribute(){
@@ -42,5 +46,15 @@ class BoardTests: XCTestCase {
     board.addRow("1 2 3")
     
     XCTAssertEqual(board.columns, 3)
+  }
+  
+  private func buildTileArray(numbers: [Int]) -> [Tile]{
+    var result = [Tile]()
+    
+    for number in numbers{
+      result.append(Tile(value: number))
+    }
+    
+    return result
   }
 }

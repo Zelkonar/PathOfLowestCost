@@ -1,7 +1,7 @@
 import Foundation
 
 class Board{
-  var tiles = [Int]()
+  var tiles = [Tile]()
   private(set) var rows = 0
   private(set) var columns = 0
   
@@ -13,8 +13,12 @@ class Board{
     }
     
     for numberString in separatedRow{
-      tiles.append(Int(numberString)!)
+      tiles.append(GetTileFromNumberString(numberString))
     }
     rows += 1
+  }
+  
+  func GetTileFromNumberString(number: String) -> Tile{
+    return Tile(value: Int(number)!)
   }
 }

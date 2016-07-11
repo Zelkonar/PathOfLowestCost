@@ -13,4 +13,10 @@ class TileTest: XCTestCase {
     
     XCTAssertEqual(tile.value, 1)
   }
+  
+  func testTileContainsColumnSet(){
+    let tile = Tile(column: 2)
+    
+    XCTAssertEqual(tile.column, 2)
+  }
 }

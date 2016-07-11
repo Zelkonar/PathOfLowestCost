@@ -2,13 +2,11 @@ import Foundation
 
 class Tile : Equatable{
   let value: Int
+  let column: Int
   
-  init(){
-    self.value = 0
-  }
-  
-  init(value: Int){
+  init(value: Int = 0, column: Int = 0){
     self.value = value
+    self.column = column
   }
  
 }

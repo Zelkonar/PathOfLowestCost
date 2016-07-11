@@ -7,4 +7,10 @@ class TileTest: XCTestCase {
     
     XCTAssertEqual(tile.value, 0)
   }
+  
+  func testTileContainsValueSet(){
+    let tile = Tile(value: 1)
+    
+    XCTAssertEqual(tile.value, 1)
+  }
 }

@@ -19,7 +19,7 @@ class Board : Equatable{
   }
   
   func GetTileFromNumberString(number: String) -> Tile{
-    return Tile(value: Int(number)!)
+    return Tile(value: Int(number)!, column: 0)
   }
 }
 

@@ -52,9 +52,13 @@ class BoardTests: XCTestCase {
     var result = [Tile]()
     
     for number in numbers{
-      result.append(Tile(value: number))
+      result.append(createTile(value: number))
     }
     
     return result
+  }
+  
+  private func createTile(value value: Int = 0, column: Int = 0) -> Tile{
+    return Tile(value: value, column: column)
   }
 }

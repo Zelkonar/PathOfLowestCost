@@ -12,14 +12,16 @@ class Board : Equatable{
       columns = separatedRow.count
     }
     
+    var column = 0
     for numberString in separatedRow{
-      tiles.append(GetTileFromNumberString(numberString))
+      column += 1
+      tiles.append(GetTileFromNumberString(numberString, column: column))
     }
     rows += 1
   }
   
-  func GetTileFromNumberString(number: String) -> Tile{
-    return Tile(value: Int(number)!, column: 0)
+  func GetTileFromNumberString(number: String, column: Int) -> Tile{
+    return Tile(value: Int(number)!, column: column)
   }
 }
 

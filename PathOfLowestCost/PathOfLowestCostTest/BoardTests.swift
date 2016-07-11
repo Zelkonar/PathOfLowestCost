@@ -4,7 +4,7 @@ class BoardTests: XCTestCase {
   var board = Board()
   
   func testAddRowASimpleRow(){
-    let expected = buildTileArray([1])
+    let expected = [Tile](arrayLiteral: createTile(value: 1, column: 1))
     
     board.addRow("1")
     
@@ -12,7 +12,7 @@ class BoardTests: XCTestCase {
   }
   
   func testAddRowWithTwoValues(){
-    let expected = buildTileArray([2, 3])
+    let expected = [Tile](arrayLiteral: createTile(value: 2, column: 1), createTile(value: 3, column: 2))
     
     board.addRow("2 3")
     
@@ -46,6 +46,14 @@ class BoardTests: XCTestCase {
     board.addRow("1 2 3")
     
     XCTAssertEqual(board.columns, 3)
+  }
+  
+  func testAddingRowAddsCorrectColumn(){
+    let expected = [Tile](arrayLiteral: Tile(value: 1, column: 1), Tile(value: 2, column: 2), Tile(value: 3, column: 3))
+    
+    board.addRow("1 2 3")
+    
+    XCTAssertEqual(board.tiles, expected)
   }
   
   private func buildTileArray(numbers: [Int]) -> [Tile]{

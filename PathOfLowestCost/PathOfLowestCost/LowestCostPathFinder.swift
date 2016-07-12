@@ -3,11 +3,13 @@ import Foundation
 class LowestCostPathFinder{
   var board: Board?
   private(set) var path = Path()
+  var maxPathCost = 50
   
   init(){}
   
-  init(board: Board){
+  init(board: Board, maxPathCost: Int = 50){
     self.board = board
+    self.maxPathCost = maxPathCost
   }
   
   func findLowestCostPath(){
@@ -28,7 +30,7 @@ class LowestCostPathFinder{
     var result = true
     
     if (index == 0){
-      if (board!.tiles[index].value >= 50){
+      if (board!.tiles[index].value >= maxPathCost){
         result = false
       }
       else {

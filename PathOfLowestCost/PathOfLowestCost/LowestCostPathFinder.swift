@@ -15,12 +15,8 @@ class LowestCostPathFinder{
   func findLowestCostPath(){
     madeToOtherSideOfBoard = false
     for i in 0...board!.tiles.endIndex - 1{
-      if (i == 0){
-        if (board!.tiles[i].value >= 50){
-          return
-        }
-        lowestTotalCost = 0
-        pathOfLowestCost = [Int]()
+      if(continuationCheck(i) == false){
+        return
       }
       lowestTotalCost! += board!.tiles[i].value
       pathOfLowestCost!.append(1)
@@ -28,6 +24,22 @@ class LowestCostPathFinder{
         madeToOtherSideOfBoard = true
       }
     }
+  }
+  
+  private func continuationCheck(index: Int) -> Bool{
+    var result = true
+    
+    if (index == 0){
+      if (board!.tiles[index].value >= 50){
+        result = false
+      }
+      else {
+        lowestTotalCost = 0
+        pathOfLowestCost = [Int]()
+      }
+    }
+    
+    return result
   }
   
 }

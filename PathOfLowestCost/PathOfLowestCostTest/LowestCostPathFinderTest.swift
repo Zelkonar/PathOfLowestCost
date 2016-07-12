@@ -39,4 +39,15 @@ class LowestCostPathFinderTest: XCTestCase {
     XCTAssertEqual(lowestCostPathFinder.lowestTotalCost, 1)
     XCTAssertEqual(lowestCostPathFinder.pathOfLowestCost!, [1])
   }
+  
+  func testFindLowestPathWith2ColumnBoard(){
+    board.addRow("1 2")
+    lowestCostPathFinder.board = board
+    
+    lowestCostPathFinder.findLowestCostPath()
+    
+    XCTAssertTrue(lowestCostPathFinder.madeToOtherSideOfBoard)
+    XCTAssertEqual(lowestCostPathFinder.lowestTotalCost, 3)
+    XCTAssertEqual(lowestCostPathFinder.pathOfLowestCost!, [1, 1])
+  }
 }

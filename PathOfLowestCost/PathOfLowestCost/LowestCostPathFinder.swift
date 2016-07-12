@@ -14,7 +14,14 @@ class LowestCostPathFinder{
   
   func findLowestCostPath(){
     madeToOtherSideOfBoard = true
-    lowestTotalCost = 1
-    pathOfLowestCost = [1]
+    for i in 0...board!.tiles.endIndex - 1{
+      if (i == 0){
+        lowestTotalCost = 0
+        pathOfLowestCost = [Int]()
+      }
+      lowestTotalCost! += board!.tiles[i].value
+      pathOfLowestCost!.append(1)
+    }
   }
+  
 }

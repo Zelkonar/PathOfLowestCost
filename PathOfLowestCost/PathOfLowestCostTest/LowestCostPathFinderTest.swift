@@ -18,15 +18,15 @@ class LowestCostPathFinderTest: XCTestCase {
   }
   
   func testMadeItToEndOfBoardIsInitiallyFalse(){
-    XCTAssertFalse(lowestCostPathFinder.madeToOtherSideOfBoard)
+    XCTAssertFalse(lowestCostPathFinder.path.madeToOtherSideOfBoard)
   }
   
   func testTotalCostInitiallyZero(){
-    XCTAssertNil(lowestCostPathFinder.lowestTotalCost)
+    XCTAssertNil(lowestCostPathFinder.path.lowestTotalCost)
   }
   
   func testLowestPathInitiallyNil(){
-    XCTAssertNil(lowestCostPathFinder.pathOfLowestCost)
+    XCTAssertNil(lowestCostPathFinder.path.pathOfLowestCost)
   }
   
   func testFindLowestPathWithSimpleBoard(){
@@ -35,9 +35,9 @@ class LowestCostPathFinderTest: XCTestCase {
     
     lowestCostPathFinder.findLowestCostPath()
     
-    XCTAssertTrue(lowestCostPathFinder.madeToOtherSideOfBoard)
-    XCTAssertEqual(lowestCostPathFinder.lowestTotalCost, 1)
-    XCTAssertEqual(lowestCostPathFinder.pathOfLowestCost!, [1])
+    XCTAssertTrue(lowestCostPathFinder.path.madeToOtherSideOfBoard)
+    XCTAssertEqual(lowestCostPathFinder.path.lowestTotalCost, 1)
+    XCTAssertEqual(lowestCostPathFinder.path.pathOfLowestCost!, [1])
   }
   
   func testFindLowestPathWith2ColumnBoard(){
@@ -46,9 +46,9 @@ class LowestCostPathFinderTest: XCTestCase {
     
     lowestCostPathFinder.findLowestCostPath()
     
-    XCTAssertTrue(lowestCostPathFinder.madeToOtherSideOfBoard)
-    XCTAssertEqual(lowestCostPathFinder.lowestTotalCost, 3)
-    XCTAssertEqual(lowestCostPathFinder.pathOfLowestCost!, [1, 1])
+    XCTAssertTrue(lowestCostPathFinder.path.madeToOtherSideOfBoard)
+    XCTAssertEqual(lowestCostPathFinder.path.lowestTotalCost, 3)
+    XCTAssertEqual(lowestCostPathFinder.path.pathOfLowestCost!, [1, 1])
   }
   
   func testFindLowetsPathThatDoesntCrossASingleTile(){
@@ -57,8 +57,8 @@ class LowestCostPathFinderTest: XCTestCase {
     
     lowestCostPathFinder.findLowestCostPath()
     
-    XCTAssertFalse(lowestCostPathFinder.madeToOtherSideOfBoard)
-    XCTAssertNil(lowestCostPathFinder.lowestTotalCost)
-    XCTAssertNil(lowestCostPathFinder.pathOfLowestCost)
+    XCTAssertFalse(lowestCostPathFinder.path.madeToOtherSideOfBoard)
+    XCTAssertNil(lowestCostPathFinder.path.lowestTotalCost)
+    XCTAssertNil(lowestCostPathFinder.path.pathOfLowestCost)
   }
 }

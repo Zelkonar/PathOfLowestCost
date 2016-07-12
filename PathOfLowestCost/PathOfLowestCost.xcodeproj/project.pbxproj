@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		795907491D3475C600790C93 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795907481D3475C600790C93 /* Path.swift */; };
+		7959074D1D34780300790C93 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795907481D3475C600790C93 /* Path.swift */; };
 		79D314EB1D2DED3C0038D9D3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314EA1D2DED3C0038D9D3 /* main.swift */; };
 		79D314FE1D2DEE130038D9D3 /* LowestCostPathFinderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314FD1D2DEE130038D9D3 /* LowestCostPathFinderTest.swift */; };
 		79D315001D2DEF390038D9D3 /* LowestCostPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314FF1D2DEF390038D9D3 /* LowestCostPathFinder.swift */; };
@@ -32,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		795907481D3475C600790C93 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		79D314E71D2DED3C0038D9D3 /* PathOfLowestCost */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PathOfLowestCost; sourceTree = BUILT_PRODUCTS_DIR; };
 		79D314EA1D2DED3C0038D9D3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		79D314F51D2DEDF30038D9D3 /* PathOfLowestCostTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PathOfLowestCostTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +90,7 @@
 				79D314FF1D2DEF390038D9D3 /* LowestCostPathFinder.swift */,
 				79D315021D2DFFCF0038D9D3 /* Board.swift */,
 				79D315071D2E015C0038D9D3 /* Tile.swift */,
+				795907481D3475C600790C93 /* Path.swift */,
 			);
 			path = PathOfLowestCost;
 			sourceTree = "<group>";
@@ -193,6 +197,7 @@
 				79D315001D2DEF390038D9D3 /* LowestCostPathFinder.swift in Sources */,
 				79D314EB1D2DED3C0038D9D3 /* main.swift in Sources */,
 				79D315031D2DFFCF0038D9D3 /* Board.swift in Sources */,
+				795907491D3475C600790C93 /* Path.swift in Sources */,
 				79D315081D2E015C0038D9D3 /* Tile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +208,7 @@
 			files = (
 				79D315011D2DEF3C0038D9D3 /* LowestCostPathFinder.swift in Sources */,
 				79D3150A1D2E01830038D9D3 /* TileTest.swift in Sources */,
+				7959074D1D34780300790C93 /* Path.swift in Sources */,
 				79D314FE1D2DEE130038D9D3 /* LowestCostPathFinderTest.swift in Sources */,
 				79D3150B1D2E026C0038D9D3 /* Tile.swift in Sources */,
 				79D315061D2E005C0038D9D3 /* Board.swift in Sources */,
@@ -350,6 +356,7 @@
 				79D314F01D2DED3C0038D9D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		79D314FA1D2DEDF30038D9D3 /* Build configuration list for PBXNativeTarget "PathOfLowestCostTest" */ = {
 			isa = XCConfigurationList;
@@ -358,6 +365,7 @@
 				79D314FC1D2DEDF30038D9D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

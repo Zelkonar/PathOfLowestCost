@@ -2,9 +2,7 @@ import Foundation
 
 class LowestCostPathFinder{
   var board: Board?
-  private(set) var madeToOtherSideOfBoard = false
-  private(set) var lowestTotalCost: Int?
-  private(set) var pathOfLowestCost: [Int]?
+  private(set) var path = Path()
   
   init(){}
   
@@ -13,15 +11,15 @@ class LowestCostPathFinder{
   }
   
   func findLowestCostPath(){
-    madeToOtherSideOfBoard = false
+    path.madeToOtherSideOfBoard = false
     for i in 0...board!.tiles.endIndex - 1{
       if(continuationCheck(i) == false){
         return
       }
-      lowestTotalCost! += board!.tiles[i].value
-      pathOfLowestCost!.append(1)
+      path.lowestTotalCost! += board!.tiles[i].value
+      path.pathOfLowestCost!.append(1)
       if (board!.tiles[i].column == board!.columns){
-        madeToOtherSideOfBoard = true
+        path.madeToOtherSideOfBoard = true
       }
     }
   }
@@ -34,8 +32,8 @@ class LowestCostPathFinder{
         result = false
       }
       else {
-        lowestTotalCost = 0
-        pathOfLowestCost = [Int]()
+        path.lowestTotalCost = 0
+        path.pathOfLowestCost = [Int]()
       }
     }
     

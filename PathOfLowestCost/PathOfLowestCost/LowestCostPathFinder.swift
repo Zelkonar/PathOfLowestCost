@@ -2,9 +2,9 @@ import Foundation
 
 class LowestCostPathFinder{
   var board: Board?
-  var madeToOtherSideOfBoard = false
-  var lowestTotalCost: Int?
-  var pathOfLowestCost: [Int]?
+  private(set) var madeToOtherSideOfBoard = false
+  private(set) var lowestTotalCost: Int?
+  private(set) var pathOfLowestCost: [Int]?
   
   init(){}
   

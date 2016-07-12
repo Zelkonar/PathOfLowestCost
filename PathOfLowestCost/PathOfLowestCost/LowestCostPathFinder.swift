@@ -17,7 +17,7 @@ class LowestCostPathFinder{
         return
       }
       path.lowestTotalCost! += board!.tiles[i].value
-      path.pathOfLowestCost!.append(1)
+      path.pathOfLowestCost.append(1)
       if (board!.tiles[i].column == board!.columns){
         path.madeToOtherSideOfBoard = true
       }

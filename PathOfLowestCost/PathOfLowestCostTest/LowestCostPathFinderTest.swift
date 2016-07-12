@@ -25,40 +25,42 @@ class LowestCostPathFinderTest: XCTestCase {
     XCTAssertNil(lowestCostPathFinder.path.lowestTotalCost)
   }
   
-  func testLowestPathInitiallyNil(){
-    XCTAssertNil(lowestCostPathFinder.path.pathOfLowestCost)
+  func testLowestPathInitiallyEmpty(){
+    XCTAssertEqual(lowestCostPathFinder.path.pathOfLowestCost, [Int]())
   }
   
   func testFindLowestPathWithSimpleBoard(){
+    let expected = Path(madeToOtherSideOfBoard: true, lowestTotalCost: 1, pathOfLowestCost: [1])
     board.addRow("1")
     lowestCostPathFinder.board = board
     
     lowestCostPathFinder.findLowestCostPath()
     
-    XCTAssertTrue(lowestCostPathFinder.path.madeToOtherSideOfBoard)
-    XCTAssertEqual(lowestCostPathFinder.path.lowestTotalCost, 1)
-    XCTAssertEqual(lowestCostPathFinder.path.pathOfLowestCost!, [1])
+    XCTAssertEqual(lowestCostPathFinder.path, expected)
   }
   
   func testFindLowestPathWith2ColumnBoard(){
+    let expected = Path(madeToOtherSideOfBoard: true, lowestTotalCost: 3, pathOfLowestCost: [1, 1])
     board.addRow("1 2")
     lowestCostPathFinder.board = board
     
     lowestCostPathFinder.findLowestCostPath()
     
+    XCTAssertEqual(lowestCostPathFinder.path, expected)
+
     XCTAssertTrue(lowestCostPathFinder.path.madeToOtherSideOfBoard)
     XCTAssertEqual(lowestCostPathFinder.path.lowestTotalCost, 3)
-    XCTAssertEqual(lowestCostPathFinder.path.pathOfLowestCost!, [1, 1])
+    XCTAssertEqual(lowestCostPathFinder.path.pathOfLowestCost, [1, 1])
   }
   
   func testFindLowetsPathThatDoesntCrossASingleTile(){
+    let expected = Path(madeToOtherSideOfBoard: false, lowestTotalCost: nil, pathOfLowestCost: [Int]())
     board.addRow("50")
     lowestCostPathFinder.board = board
     
     lowestCostPathFinder.findLowestCostPath()
     
-    XCTAssertFalse(lowestCostPathFinder.path.madeToOtherSideOfBoard)
-    XCTAssertNil(lowestCostPathFinder.path.lowestTotalCost)
-    XCTAssertNil(lowestCostPathFinder.path.pathOfLowestCost)
+    XCTAssertEqual(lowestCostPathFinder.path, expected)
+
   }
 }

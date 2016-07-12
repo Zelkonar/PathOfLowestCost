@@ -50,4 +50,15 @@ class LowestCostPathFinderTest: XCTestCase {
     XCTAssertEqual(lowestCostPathFinder.lowestTotalCost, 3)
     XCTAssertEqual(lowestCostPathFinder.pathOfLowestCost!, [1, 1])
   }
+  
+  func testFindLowetsPathThatDoesntCrossASingleTile(){
+    board.addRow("50")
+    lowestCostPathFinder.board = board
+    
+    lowestCostPathFinder.findLowestCostPath()
+    
+    XCTAssertFalse(lowestCostPathFinder.madeToOtherSideOfBoard)
+    XCTAssertNil(lowestCostPathFinder.lowestTotalCost)
+    XCTAssertNil(lowestCostPathFinder.pathOfLowestCost)
+  }
 }

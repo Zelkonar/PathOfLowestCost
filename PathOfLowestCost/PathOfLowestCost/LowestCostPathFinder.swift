@@ -19,16 +19,14 @@ class LowestCostPathFinder{
       }
       if (i == 0){
         path = Path(madeToOtherSideOfBoard: false, lowestTotalCost: 0, pathOfLowestCost: [Int]())
-        path.lowestTotalCost! += getTile(i).value
-        path.pathOfLowestCost.append(getTile(i).row)
+        addTileToPath(getTile(i))
       }
       else if(getTile(i).row != getTile(i-1).row){
         path.lowestTotalCost! = getTile(i).value
         path.pathOfLowestCost = [getTile(i).row]
       }
       else{
-        path.lowestTotalCost! += getTile(i).value
-        path.pathOfLowestCost.append(getTile(i).row)
+        addTileToPath(getTile(i))
       }
       if (getTile(i).column == board!.columns){
         path.madeToOtherSideOfBoard = true
@@ -45,5 +43,10 @@ class LowestCostPathFinder{
   
   private func getTile(index: Int) -> Tile{
     return board!.tiles[index]
+  }
+  
+  private func addTileToPath(tile: Tile){
+    path.lowestTotalCost! += tile.value
+    path.pathOfLowestCost.append(tile.row)
   }
 }

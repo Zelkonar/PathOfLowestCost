@@ -13,9 +13,8 @@ class LowestCostPathFinder{
   }
   
   func findLowestCostPath(){
-    path.madeToOtherSideOfBoard = false
     for i in 0...board!.tiles.endIndex - 1{
-      if(continuationCheck(i) == false){
+      if(isValidToContinue(i) == false){
         return
       }
       if (i == 0){
@@ -29,7 +28,7 @@ class LowestCostPathFinder{
     }
   }
   
-  private func continuationCheck(index: Int) -> Bool{
+  private func isValidToContinue(index: Int) -> Bool{
     if ((path.lowestTotalCost ?? 0) + getTile(index).value >= maxPathCost){
       return false
     }

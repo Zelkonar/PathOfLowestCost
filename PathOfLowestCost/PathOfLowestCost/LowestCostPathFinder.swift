@@ -21,18 +21,22 @@ class LowestCostPathFinder{
       if (i == 0){
         path = Path(madeToOtherSideOfBoard: false, lowestTotalCost: 0, pathOfLowestCost: [Int]())
       }
-      path.lowestTotalCost! += board!.tiles[i].value
+      path.lowestTotalCost! += getTile(i).value
       path.pathOfLowestCost.append(1)
-      if (board!.tiles[i].column == board!.columns){
+      if (getTile(i).column == board!.columns){
         path.madeToOtherSideOfBoard = true
       }
     }
   }
   
   private func continuationCheck(index: Int) -> Bool{
-    if ((path.lowestTotalCost ?? 0) + board!.tiles[index].value >= maxPathCost){
+    if ((path.lowestTotalCost ?? 0) + getTile(index).value >= maxPathCost){
       return false
     }
     return true
+  }
+  
+  private func getTile(index: Int) -> Tile{
+    return board!.tiles[index]
   }
 }

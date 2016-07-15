@@ -18,6 +18,9 @@ class LowestCostPathFinder{
       if(continuationCheck(i) == false){
         return
       }
+      if (i == 0){
+        path = Path(madeToOtherSideOfBoard: false, lowestTotalCost: 0, pathOfLowestCost: [Int]())
+      }
       path.lowestTotalCost! += board!.tiles[i].value
       path.pathOfLowestCost.append(1)
       if (board!.tiles[i].column == board!.columns){
@@ -27,23 +30,9 @@ class LowestCostPathFinder{
   }
   
   private func continuationCheck(index: Int) -> Bool{
-    var result = true
-    
-    if (index == 0){
-      if (board!.tiles[index].value >= maxPathCost){
-        result = false
-      }
-      else {
-        path.lowestTotalCost = 0
-        path.pathOfLowestCost = [Int]()
-      }
+    if ((path.lowestTotalCost ?? 0) + board!.tiles[index].value >= maxPathCost){
+      return false
     }
-    else{
-      if (path.lowestTotalCost! + board!.tiles[index].value >= maxPathCost){
-        result = false
-      }
-    }
-    return result
+    return true
   }
-  
 }

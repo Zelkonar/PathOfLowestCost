@@ -4,7 +4,7 @@ class BoardTests: XCTestCase {
   var board = Board()
   
   func testAddRowASimpleRow(){
-    let expected = buildTileArray([1], columns: [1])
+    let expected = buildTileArray([1], columns: [1], rows: [1])
     
     board.addRow("1")
     
@@ -12,7 +12,7 @@ class BoardTests: XCTestCase {
   }
   
   func testAddRowWithTwoValues(){
-    let expected = buildTileArray([2, 3], columns: [1, 2])
+    let expected = buildTileArray([2, 3], columns: [1, 2], rows: [1, 1])
     
     board.addRow("2 3")
     
@@ -48,14 +48,23 @@ class BoardTests: XCTestCase {
     XCTAssertEqual(board.columns, 3)
   }
   
-  func testAddingRowAddsCorrectColumn(){
-    let expected = buildTileArray([1, 2, 3], columns: [1, 2, 3])
+  func testAddRowAddsCorrectColumnToTiles(){
+    let expected = buildTileArray([1, 2, 3], columns: [1, 2, 3], rows: [1, 1, 1])
     
     board.addRow("1 2 3")
     
     XCTAssertEqual(board.tiles, expected)
   }
   
+  func testAddRowAddsCorrectRowToTiles(){
+    let expected = buildTileArray([1, 2, 3, 4, 5, 6], columns: [1, 2, 3, 1, 2, 3], rows: [1, 1, 1, 2, 2, 2])
+    
+    board.addRow("1 2 3")
+    board.addRow("4 5 6")
+    
+    XCTAssertEqual(board.tiles, expected)
+  }
+
   func testEquatableWhenEqual(){
     let board1 = Board()
     let board2 = Board()
@@ -76,17 +85,17 @@ class BoardTests: XCTestCase {
     XCTAssertFalse(board1 == board2)
   }
   
-  private func buildTileArray(values: [Int], columns: [Int]) -> [Tile]{
+  private func buildTileArray(values: [Int], columns: [Int], rows: [Int]) -> [Tile]{
     var result = [Tile]()
     
     for index in 0...values.endIndex - 1{
-      result.append(createTile(value: values[index], column: columns[index]))
+      result.append(createTile(value: values[index], column: columns[index], row: rows[index]))
     }
     
     return result
   }
   
-  private func createTile(value value: Int = 0, column: Int = 0) -> Tile{
-    return Tile(value: value, column: column, row: 0)
+  private func createTile(value value: Int = 0, column: Int = 0, row: Int = 0) -> Tile{
+    return Tile(value: value, column: column, row: row)
   }
 }

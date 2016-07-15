@@ -25,7 +25,7 @@ class LowestCostPathFinder{
           paths.append(Path(madeToOtherSideOfBoard: (board!.columns == i ? true : false), lowestTotalCost: tile.value, pathOfLowestCost: [j]))
         }
         else{
-          for path in paths.filter({$0.pathOfLowestCost.count == board!.columns - 1}){
+          for path in paths.filter({$0.pathOfLowestCost.count == i - 1}){
             if (path.lowestTotalCost! + tile.value >= maxPathCost){
               break;
             }

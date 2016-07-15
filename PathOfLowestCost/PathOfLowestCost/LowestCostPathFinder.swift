@@ -38,7 +38,11 @@ class LowestCostPathFinder{
         path.pathOfLowestCost = [Int]()
       }
     }
-    
+    else{
+      if (path.lowestTotalCost! + board!.tiles[index].value >= maxPathCost){
+        result = false
+      }
+    }
     return result
   }
   

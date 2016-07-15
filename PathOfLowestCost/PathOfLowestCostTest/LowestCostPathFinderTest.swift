@@ -61,6 +61,15 @@ class LowestCostPathFinderTest: XCTestCase {
     lowestCostPathFinder.findLowestCostPath()
     
     XCTAssertEqual(lowestCostPathFinder.path, expected)
-
+  }
+  
+  func testFindLowestPathCrosses1TileButDoesNotContinueIfAboveMaxPathValue(){
+    let expected = Path(madeToOtherSideOfBoard: false, lowestTotalCost: 5, pathOfLowestCost: [1])
+    board.addRow("5 50")
+    lowestCostPathFinder.board = board
+    
+    lowestCostPathFinder.findLowestCostPath()
+    
+    XCTAssertEqual(lowestCostPathFinder.path, expected)
   }
 }

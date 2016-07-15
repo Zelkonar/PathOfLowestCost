@@ -19,9 +19,17 @@ class LowestCostPathFinder{
       }
       if (i == 0){
         path = Path(madeToOtherSideOfBoard: false, lowestTotalCost: 0, pathOfLowestCost: [Int]())
+        path.lowestTotalCost! += getTile(i).value
+        path.pathOfLowestCost.append(getTile(i).row)
       }
-      path.lowestTotalCost! += getTile(i).value
-      path.pathOfLowestCost.append(1)
+      else if(getTile(i).row != getTile(i-1).row){
+        path.lowestTotalCost! = getTile(i).value
+        path.pathOfLowestCost = [getTile(i).row]
+      }
+      else{
+        path.lowestTotalCost! += getTile(i).value
+        path.pathOfLowestCost.append(getTile(i).row)
+      }
       if (getTile(i).column == board!.columns){
         path.madeToOtherSideOfBoard = true
       }

@@ -15,5 +15,6 @@ class Tile : Equatable{
 
 func ==(lhs: Tile, rhs: Tile) -> Bool{
   return (lhs.value == rhs.value) &&
-         (lhs.column == rhs.column)
+         (lhs.column == rhs.column) &&
+         (lhs.row == rhs.row)
 }

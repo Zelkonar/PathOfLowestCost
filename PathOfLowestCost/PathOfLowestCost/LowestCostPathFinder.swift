@@ -12,41 +12,37 @@ class LowestCostPathFinder{
     self.maxPathCost = maxPathCost
   }
   
+  
   func findLowestCostPath(){
-    for i in 0...board!.tiles.endIndex - 1{
-      if(isValidToContinue(i) == false){
-        return
-      }
-      if (i == 0){
-        path = Path(madeToOtherSideOfBoard: false, lowestTotalCost: 0, pathOfLowestCost: [Int]())
-        addTileToPath(getTile(i))
-      }
-      else if(getTile(i).row != getTile(i-1).row){
-        path.lowestTotalCost! = getTile(i).value
-        path.pathOfLowestCost = [getTile(i).row]
-      }
-      else{
-        addTileToPath(getTile(i))
-      }
-      if (getTile(i).column == board!.columns){
-        path.madeToOtherSideOfBoard = true
+    var paths = [Path]()
+    for i in 1...board!.columns{
+      for j in 1...board!.rows{
+        let tile = getUniqueTile(row: j, column: i)
+        if (i == 1){
+          if (tile.value >= maxPathCost){
+            break;
+          }
+          paths.append(Path(madeToOtherSideOfBoard: (board!.columns == i ? true : false), lowestTotalCost: tile.value, pathOfLowestCost: [j]))
+        }
+        else{
+          for path in paths.filter({$0.pathOfLowestCost.count == board!.columns - 1}){
+            if (path.lowestTotalCost! + tile.value >= maxPathCost){
+              break;
+            }
+            paths.append(Path(madeToOtherSideOfBoard: (board!.columns == i ? true : false), lowestTotalCost: path.lowestTotalCost! + tile.value, pathOfLowestCost: path.pathOfLowestCost + [j]))
+          }
+        }
       }
     }
-  }
-  
-  private func isValidToContinue(index: Int) -> Bool{
-    if ((path.lowestTotalCost ?? 0) + getTile(index).value >= maxPathCost){
-      return false
+    if (paths.isEmpty){
+      return
     }
-    return true
+    let maxTraverseCount = paths.maxElement({$0.0.pathOfLowestCost.count <= $0.1.pathOfLowestCost.count})!.pathOfLowestCost.count
+    paths = paths.filter({$0.pathOfLowestCost.count == maxTraverseCount})
+    path = paths.minElement({$0.0.lowestTotalCost < $0.1.lowestTotalCost})!
   }
   
-  private func getTile(index: Int) -> Tile{
-    return board!.tiles[index]
-  }
-  
-  private func addTileToPath(tile: Tile){
-    path.lowestTotalCost! += tile.value
-    path.pathOfLowestCost.append(tile.row)
+  private func getUniqueTile(row row: Int, column: Int) -> Tile{
+    return board!.tiles.filter({$0.row == row && $0.column == column}).first!
   }
 }

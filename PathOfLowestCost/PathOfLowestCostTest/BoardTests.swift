@@ -56,6 +56,26 @@ class BoardTests: XCTestCase {
     XCTAssertEqual(board.tiles, expected)
   }
   
+  func testEquatableWhenEqual(){
+    let board1 = Board()
+    let board2 = Board()
+    
+    board1.addRow("1 2")
+    board2.addRow("1 2")
+    
+    XCTAssertTrue(board1 == board2)
+  }
+  
+  func testEquatableWhenNotEqual(){
+    let board1 = Board()
+    let board2 = Board()
+    
+    board1.addRow("1 2")
+    board2.addRow("2 3")
+    
+    XCTAssertFalse(board1 == board2)
+  }
+  
   private func buildTileArray(values: [Int], columns: [Int]) -> [Tile]{
     var result = [Tile]()
     

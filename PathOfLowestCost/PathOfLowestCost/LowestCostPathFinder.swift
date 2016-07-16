@@ -19,14 +19,14 @@ class LowestCostPathFinder{
       for j in 1...board!.rows{
         let tile = getUniqueTile(row: j, column: i)
         if (i == 1){
-          if (tile.value >= maxPathCost){
+          if (isValidToContinue(0, tileValue: tile.value)){
             break;
           }
           paths.append(Path(madeToOtherSideOfBoard: (board!.columns == i ? true : false), lowestTotalCost: tile.value, pathOfLowestCost: [j]))
         }
         else{
           for path in paths.filter({$0.pathOfLowestCost.count == i - 1}){
-            if (path.lowestTotalCost! + tile.value >= maxPathCost){
+            if (isValidToContinue(path.lowestTotalCost!, tileValue: tile.value)){
               break;
             }
             paths.append(Path(madeToOtherSideOfBoard: (board!.columns == i ? true : false), lowestTotalCost: path.lowestTotalCost! + tile.value, pathOfLowestCost: path.pathOfLowestCost + [j]))
@@ -44,5 +44,9 @@ class LowestCostPathFinder{
   
   private func getUniqueTile(row row: Int, column: Int) -> Tile{
     return board!.tiles.filter({$0.row == row && $0.column == column}).first!
+  }
+  
+  private func isValidToContinue(pathValue: Int, tileValue: Int) -> Bool{
+    return pathValue + tileValue >= maxPathCost
   }
 }

@@ -91,7 +91,7 @@ class LowestCostPathFinderTest: XCTestCase {
     XCTAssertEqual(lowestCostPathFinder.path, expected)
   }
   
-  func testPillarVersionDoesntMakeItTooEnd(){
+  func testFindLowestPathWithMoreThan2Columns(){
     let expected = Path(madeToOtherSideOfBoard: false, lowestTotalCost: 48, pathOfLowestCost: [1, 1, 1])
     board.addRow("19 10 19 10 19")
     board.addRow("21 23 20 19 12")

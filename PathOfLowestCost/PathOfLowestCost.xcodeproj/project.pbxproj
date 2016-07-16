@@ -54,7 +54,7 @@
 		79D315091D2E01830038D9D3 /* TileTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileTest.swift; sourceTree = "<group>"; };
 		79F71C6E1D3AA486003E2D90 /* PathOfLowestCostPerformance.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PathOfLowestCostPerformance.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F71C721D3AA486003E2D90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79F71C761D3AA70C003E2D90 /* LowestCostPathFinderPerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LowestCostPathFinderPerformanceTest.swift; path = PathOfLowestCostPerformance/LowestCostPathFinderPerformanceTest.swift; sourceTree = "<group>"; };
+		79F71C761D3AA70C003E2D90 /* LowestCostPathFinderPerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowestCostPathFinderPerformanceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,6 @@
 		79D314DE1D2DED3C0038D9D3 = {
 			isa = PBXGroup;
 			children = (
-				79F71C761D3AA70C003E2D90 /* LowestCostPathFinderPerformanceTest.swift */,
 				79D314E91D2DED3C0038D9D3 /* PathOfLowestCost */,
 				79D314F61D2DEDF30038D9D3 /* PathOfLowestCostTest */,
 				79F71C6F1D3AA486003E2D90 /* PathOfLowestCostPerformance */,
@@ -130,6 +129,7 @@
 		79F71C6F1D3AA486003E2D90 /* PathOfLowestCostPerformance */ = {
 			isa = PBXGroup;
 			children = (
+				79F71C761D3AA70C003E2D90 /* LowestCostPathFinderPerformanceTest.swift */,
 				79F71C721D3AA486003E2D90 /* Info.plist */,
 			);
 			path = PathOfLowestCostPerformance;

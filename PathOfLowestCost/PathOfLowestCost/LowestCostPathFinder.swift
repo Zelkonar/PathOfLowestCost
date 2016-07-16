@@ -25,8 +25,9 @@ class LowestCostPathFinder{
           paths.append(Path(madeToOtherSideOfBoard: (board!.columns == i ? true : false), lowestTotalCost: tile.value, pathOfLowestCost: [j]))
         }
         else{
-          var rowsToAdd = [Int]()
-          rowsToAdd += [tile.row, tile.row + 1, tile.row - 1]
+          let rowPlusOne = tile.row + 1 > board?.rows ? 1 : tile.row + 1
+          let rowMinusOne = tile.row - 1 < 1 ? board!.rows : tile.row - 1
+          let rowsToAdd = [tile.row, rowPlusOne, rowMinusOne]
           for path in paths.filter({$0.pathOfLowestCost.count == i - 1 && rowsToAdd.contains($0.pathOfLowestCost.last!)})
           {
             if (isValidToContinue(path.lowestTotalCost!, tileValue: tile.value)){

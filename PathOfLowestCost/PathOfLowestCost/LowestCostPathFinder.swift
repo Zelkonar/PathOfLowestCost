@@ -67,10 +67,7 @@ class LowestCostPathFinder{
       result.append(Path(isFinalColumn, tile.value, [row]))
     }
     else{
-      let rowPlusOne = tile.row + 1 > board?.rows ? 1 : tile.row + 1
-      let rowMinusOne = tile.row - 1 < 1 ? board!.rows : tile.row - 1
-      let rowsToAdd = [tile.row, rowPlusOne, rowMinusOne]
-      for path in paths.filter({$0.pathOfLowestCost.count == column - 1 && rowsToAdd.contains($0.pathOfLowestCost.last!)})
+      for path in pathsOneColumnBeforeAndOneAwayFromTile(paths, tile, column)
       {
         if (isValidToContinue(path.lowestTotalCost!, tile.value) == false){
           continue
@@ -87,5 +84,12 @@ class LowestCostPathFinder{
   
   private func pathOfLowestCost(paths: [Path]) -> Path{
     return paths.minElement({$0.0.lowestTotalCost < $0.1.lowestTotalCost})!
+  }
+  
+  private func pathsOneColumnBeforeAndOneAwayFromTile(paths: [Path], _ tile: Tile, _ column: Int) -> [Path]{
+    let rowPlusOne = tile.row + 1 > board?.rows ? 1 : tile.row + 1
+    let rowMinusOne = tile.row - 1 < 1 ? board!.rows : tile.row - 1
+    let rowsToAdd = [tile.row, rowPlusOne, rowMinusOne]
+    return paths.filter({$0.pathOfLowestCost.count == column - 1 && rowsToAdd.contains($0.pathOfLowestCost.last!)})
   }
 }

@@ -47,6 +47,9 @@ class LowestCostPathFinder{
   
   func output() -> String{
     var result = String()
+    if (board == nil){
+      return "No Path"
+    }
     if (path.madeToOtherSideOfBoard){
       result += "Yes"
     }

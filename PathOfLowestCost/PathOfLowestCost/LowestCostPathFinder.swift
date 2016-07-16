@@ -12,7 +12,6 @@ class LowestCostPathFinder{
     self.maxPathCost = maxPathCost
   }
   
-  
   func findLowestCostPath(){
     var paths = [Path]()
     for i in 1...board!.columns{
@@ -44,6 +43,22 @@ class LowestCostPathFinder{
     let maxTraverseCount = paths.maxElement({$0.0.pathOfLowestCost.count <= $0.1.pathOfLowestCost.count})!.pathOfLowestCost.count
     paths = paths.filter({$0.pathOfLowestCost.count == maxTraverseCount})
     path = paths.minElement({$0.0.lowestTotalCost < $0.1.lowestTotalCost})!
+  }
+  
+  func output() -> String{
+    var result = String()
+    if (path.madeToOtherSideOfBoard){
+      result += "Yes"
+    }
+    else{
+      result += "No"
+    }
+    result += "\n\(path.lowestTotalCost!)\n"
+    for row in path.pathOfLowestCost{
+      result += "\(row) "
+    }
+    result = String(result.characters.dropLast())
+    return result
   }
   
   private func getUniqueTile(row row: Int, column: Int) -> Tile{

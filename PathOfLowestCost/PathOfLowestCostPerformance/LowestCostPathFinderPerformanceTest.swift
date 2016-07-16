@@ -4,6 +4,14 @@ class LowestCostPathFinderPerformanceTest: XCTestCase {
   var lowestCostPathFinder = LowestCostPathFinder()
   var board = Board()
 
+  func testSmallBoard(){
+    createBoard(3, 7)
+    lowestCostPathFinder.board = board
+    self.measureBlock{
+      self.lowestCostPathFinder.findLowestCostPath()
+    }
+  }
+  
   func testMediumBoard() {
     createBoard(5, 50)
     lowestCostPathFinder.board = board

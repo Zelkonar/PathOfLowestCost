@@ -52,8 +52,8 @@ class LowestCostPathFinder{
     return board!.tiles.filter({$0.row == row && $0.column == column}).first!
   }
   
-  private func isValidToContinue(pathValue: Int, tileValue: Int) -> Bool{
-    return pathValue + tileValue >= maxPathCost
+  private func isValidToContinue(pathValue: Int, _ tileValue: Int) -> Bool{
+    return pathValue + tileValue < maxPathCost
   }
   
   private func pathToAddToPathsArray(row: Int, _ column: Int, _ paths: [Path]) -> [Path]{
@@ -61,7 +61,7 @@ class LowestCostPathFinder{
     let tile = getUniqueTile(row: row, column: column)
     let isFinalColumn = board!.columns == column ? true : false
     if (column == 1){
-      if (isValidToContinue(0, tileValue: tile.value)){
+      if (isValidToContinue(0, tile.value) == false){
         return result
       }
       result.append(Path(isFinalColumn, tile.value, [row]))
@@ -72,7 +72,7 @@ class LowestCostPathFinder{
       let rowsToAdd = [tile.row, rowPlusOne, rowMinusOne]
       for path in paths.filter({$0.pathOfLowestCost.count == column - 1 && rowsToAdd.contains($0.pathOfLowestCost.last!)})
       {
-        if (isValidToContinue(path.lowestTotalCost!, tileValue: tile.value)){
+        if (isValidToContinue(path.lowestTotalCost!, tile.value) == false){
           continue
         }
         result.append(Path(isFinalColumn, path.lowestTotalCost! + tile.value, path.pathOfLowestCost + [row]))

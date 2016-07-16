@@ -21,11 +21,11 @@ class LowestCostPathFinder{
       for j in 1...board!.rows{
         paths += pathToAddToPathsArray(j, i, paths)
       }
+      paths = paths.filter({$0.pathOfLowestCost.count == maxTraverseCount(paths)})
     }
     if (paths.isEmpty){
       return
     }
-    paths = paths.filter({$0.pathOfLowestCost.count == maxTraverseCount(paths)})
     path = pathOfLowestCost(paths)
   }
   

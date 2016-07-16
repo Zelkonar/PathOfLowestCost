@@ -19,25 +19,7 @@ class LowestCostPathFinder{
     var paths = [Path]()
     for i in 1...board!.columns{
       for j in 1...board!.rows{
-        let tile = getUniqueTile(row: j, column: i)
-        if (i == 1){
-          if (isValidToContinue(0, tileValue: tile.value)){
-            break;
-          }
-          paths.append(Path(madeToOtherSideOfBoard: (board!.columns == i ? true : false), lowestTotalCost: tile.value, pathOfLowestCost: [j]))
-        }
-        else{
-          let rowPlusOne = tile.row + 1 > board?.rows ? 1 : tile.row + 1
-          let rowMinusOne = tile.row - 1 < 1 ? board!.rows : tile.row - 1
-          let rowsToAdd = [tile.row, rowPlusOne, rowMinusOne]
-          for path in paths.filter({$0.pathOfLowestCost.count == i - 1 && rowsToAdd.contains($0.pathOfLowestCost.last!)})
-          {
-            if (isValidToContinue(path.lowestTotalCost!, tileValue: tile.value)){
-              break;
-            }
-            paths.append(Path(madeToOtherSideOfBoard: (board!.columns == i ? true : false), lowestTotalCost: path.lowestTotalCost! + tile.value, pathOfLowestCost: path.pathOfLowestCost + [j]))
-          }
-        }
+        paths += pathToAddToPathsArray(j, i, paths)
       }
     }
     if (paths.isEmpty){
@@ -73,5 +55,29 @@ class LowestCostPathFinder{
   
   private func isValidToContinue(pathValue: Int, tileValue: Int) -> Bool{
     return pathValue + tileValue >= maxPathCost
+  }
+  
+  private func pathToAddToPathsArray(row: Int, _ column: Int, _ paths: [Path]) -> [Path]{
+    var result = [Path]()
+    let tile = getUniqueTile(row: row, column: column)
+    if (column == 1){
+      if (isValidToContinue(0, tileValue: tile.value)){
+        return result
+      }
+      result.append(Path(madeToOtherSideOfBoard: (board!.columns == column ? true : false), lowestTotalCost: tile.value, pathOfLowestCost: [row]))
+    }
+    else{
+      let rowPlusOne = tile.row + 1 > board?.rows ? 1 : tile.row + 1
+      let rowMinusOne = tile.row - 1 < 1 ? board!.rows : tile.row - 1
+      let rowsToAdd = [tile.row, rowPlusOne, rowMinusOne]
+      for path in paths.filter({$0.pathOfLowestCost.count == column - 1 && rowsToAdd.contains($0.pathOfLowestCost.last!)})
+      {
+        if (isValidToContinue(path.lowestTotalCost!, tileValue: tile.value)){
+          continue
+        }
+        result.append(Path(madeToOtherSideOfBoard: (board!.columns == column ? true : false), lowestTotalCost: path.lowestTotalCost! + tile.value, pathOfLowestCost: path.pathOfLowestCost + [row]))
+      }
+    }
+    return result
   }
 }

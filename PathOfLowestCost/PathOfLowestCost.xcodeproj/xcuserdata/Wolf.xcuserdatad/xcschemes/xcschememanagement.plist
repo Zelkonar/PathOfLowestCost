@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>PathOfLowestCostPerformance.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>PathOfLowestCostTest.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>79D314F41D2DEDF30038D9D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>79F71C6D1D3AA486003E2D90</key>
 		<dict>
 			<key>primary</key>
 			<true/>

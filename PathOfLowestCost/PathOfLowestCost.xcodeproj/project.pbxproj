@@ -47,6 +47,8 @@
 		79D315041D2DFFF80038D9D3 /* BoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
 		79D315071D2E015C0038D9D3 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		79D315091D2E01830038D9D3 /* TileTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileTest.swift; sourceTree = "<group>"; };
+		79F71C6E1D3AA486003E2D90 /* PathOfLowestCostPerformance.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PathOfLowestCostPerformance.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79F71C721D3AA486003E2D90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79F71C6B1D3AA486003E2D90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -72,6 +81,7 @@
 			children = (
 				79D314E91D2DED3C0038D9D3 /* PathOfLowestCost */,
 				79D314F61D2DEDF30038D9D3 /* PathOfLowestCostTest */,
+				79F71C6F1D3AA486003E2D90 /* PathOfLowestCostPerformance */,
 				79D314E81D2DED3C0038D9D3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +91,7 @@
 			children = (
 				79D314E71D2DED3C0038D9D3 /* PathOfLowestCost */,
 				79D314F51D2DEDF30038D9D3 /* PathOfLowestCostTest.xctest */,
+				79F71C6E1D3AA486003E2D90 /* PathOfLowestCostPerformance.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +118,14 @@
 				79D314F91D2DEDF30038D9D3 /* Info.plist */,
 			);
 			path = PathOfLowestCostTest;
+			sourceTree = "<group>";
+		};
+		79F71C6F1D3AA486003E2D90 /* PathOfLowestCostPerformance */ = {
+			isa = PBXGroup;
+			children = (
+				79F71C721D3AA486003E2D90 /* Info.plist */,
+			);
+			path = PathOfLowestCostPerformance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +165,23 @@
 			productReference = 79D314F51D2DEDF30038D9D3 /* PathOfLowestCostTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		79F71C6D1D3AA486003E2D90 /* PathOfLowestCostPerformance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79F71C751D3AA486003E2D90 /* Build configuration list for PBXNativeTarget "PathOfLowestCostPerformance" */;
+			buildPhases = (
+				79F71C6A1D3AA486003E2D90 /* Sources */,
+				79F71C6B1D3AA486003E2D90 /* Frameworks */,
+				79F71C6C1D3AA486003E2D90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PathOfLowestCostPerformance;
+			productName = PathOfLowestCostPerformance;
+			productReference = 79F71C6E1D3AA486003E2D90 /* PathOfLowestCostPerformance.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -160,6 +196,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					79D314F41D2DEDF30038D9D3 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					79F71C6D1D3AA486003E2D90 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -178,12 +217,20 @@
 			targets = (
 				79D314E61D2DED3C0038D9D3 /* PathOfLowestCost */,
 				79D314F41D2DEDF30038D9D3 /* PathOfLowestCostTest */,
+				79F71C6D1D3AA486003E2D90 /* PathOfLowestCostPerformance */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		79D314F31D2DEDF30038D9D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79F71C6C1D3AA486003E2D90 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -217,6 +264,13 @@
 				79D315061D2E005C0038D9D3 /* Board.swift in Sources */,
 				79B657F61D388AE00076039A /* PathTest.swift in Sources */,
 				79D315051D2DFFF80038D9D3 /* BoardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79F71C6A1D3AA486003E2D90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +395,28 @@
 			};
 			name = Release;
 		};
+		79F71C731D3AA486003E2D90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PathOfLowestCostPerformance/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JeffreyWolf2015.PathOfLowestCostPerformance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		79F71C741D3AA486003E2D90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PathOfLowestCostPerformance/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JeffreyWolf2015.PathOfLowestCostPerformance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -370,6 +446,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		79F71C751D3AA486003E2D90 /* Build configuration list for PBXNativeTarget "PathOfLowestCostPerformance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79F71C731D3AA486003E2D90 /* Debug */,
+				79F71C741D3AA486003E2D90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

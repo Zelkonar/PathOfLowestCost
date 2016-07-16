@@ -128,4 +128,32 @@ class LowestCostPathFinderTest: XCTestCase {
     
     XCTAssertEqual(lowestCostPathFinder.path, expected)
   }
+  
+  func testPillarVersion1(){
+    let expected = Path(madeToOtherSideOfBoard: true, lowestTotalCost: 16, pathOfLowestCost: [1, 2, 3, 4, 4, 5])
+    board.addRow("3 4 1 2 8 6")
+    board.addRow("6 1 8 2 7 4")
+    board.addRow("5 9 3 9 9 5")
+    board.addRow("8 4 1 3 2 6")
+    board.addRow("3 7 2 8 6 4")
+    lowestCostPathFinder.board = board
+    
+    lowestCostPathFinder.findLowestCostPath()
+    
+    XCTAssertEqual(lowestCostPathFinder.path, expected)
+  }
+  
+  func testPillarVersion2(){
+    let expected = Path(madeToOtherSideOfBoard: true, lowestTotalCost: 11, pathOfLowestCost: [1, 2, 1, 5, 4, 5])
+    board.addRow("3 4 1 2 8 6")
+    board.addRow("6 1 8 2 7 4")
+    board.addRow("5 9 3 9 9 5")
+    board.addRow("8 4 1 3 2 6")
+    board.addRow("3 7 2 1 2 3")
+    lowestCostPathFinder.board = board
+    
+    lowestCostPathFinder.findLowestCostPath()
+    
+    XCTAssertEqual(lowestCostPathFinder.path, expected)
+  }
 }

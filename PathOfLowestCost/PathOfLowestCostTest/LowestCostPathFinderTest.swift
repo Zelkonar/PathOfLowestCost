@@ -117,6 +117,17 @@ class LowestCostPathFinderTest: XCTestCase {
     XCTAssertEqual(lowestCostPathFinder.path, expected)
   }
   
+  func testFindLowestCostPathCanAcceptNegativeNumbers(){
+    let expected = Path(true, -2, [1, 2])
+    board.addRow("-1 1")
+    board.addRow("1 -1")
+    lowestCostPathFinder.board = board
+    
+    lowestCostPathFinder.findLowestCostPath()
+    
+    XCTAssertEqual(lowestCostPathFinder.path, expected)
+  }
+  
   func testFindLowestPathJumpsToOtherSideOfBoard(){
     let expected = Path(true, 2, [3, 1])
     board.addRow("10 1")

@@ -82,7 +82,8 @@ class LowestCostPathFinder{
     let rowPlusOne = tile.row + 1 > board?.rows ? 1 : tile.row + 1
     let rowMinusOne = tile.row - 1 < 1 ? board!.rows : tile.row - 1
     let rowsToAdd = [tile.row, rowPlusOne, rowMinusOne]
-    return paths.filter({$0.pathOfLowestCost.count == column - 1 && rowsToAdd.contains($0.pathOfLowestCost.last!)})
+    let possiblePaths = paths.filter({$0.pathOfLowestCost.count == column - 1 && rowsToAdd.contains($0.pathOfLowestCost.last!)})
+    return possiblePaths.isEmpty ? [] : [pathOfLowestCost(possiblePaths)]
   }
   
   private func removeTrailingWhiteSpace(s: String) -> String{

@@ -59,11 +59,12 @@ class LowestCostPathFinder{
   private func pathToAddToPathsArray(row: Int, _ column: Int, _ paths: [Path]) -> [Path]{
     var result = [Path]()
     let tile = getUniqueTile(row: row, column: column)
+    let isFinalColumn = board!.columns == column ? true : false
     if (column == 1){
       if (isValidToContinue(0, tileValue: tile.value)){
         return result
       }
-      result.append(Path((board!.columns == column ? true : false), tile.value, [row]))
+      result.append(Path(isFinalColumn, tile.value, [row]))
     }
     else{
       let rowPlusOne = tile.row + 1 > board?.rows ? 1 : tile.row + 1
@@ -74,7 +75,7 @@ class LowestCostPathFinder{
         if (isValidToContinue(path.lowestTotalCost!, tileValue: tile.value)){
           continue
         }
-        result.append(Path((board!.columns == column ? true : false), path.lowestTotalCost! + tile.value, path.pathOfLowestCost + [row]))
+        result.append(Path(isFinalColumn, path.lowestTotalCost! + tile.value, path.pathOfLowestCost + [row]))
       }
     }
     return result

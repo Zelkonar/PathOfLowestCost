@@ -20,6 +20,11 @@
 		79D315081D2E015C0038D9D3 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D315071D2E015C0038D9D3 /* Tile.swift */; };
 		79D3150A1D2E01830038D9D3 /* TileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D315091D2E01830038D9D3 /* TileTest.swift */; };
 		79D3150B1D2E026C0038D9D3 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D315071D2E015C0038D9D3 /* Tile.swift */; };
+		79F71C771D3AA70C003E2D90 /* LowestCostPathFinderPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F71C761D3AA70C003E2D90 /* LowestCostPathFinderPerformanceTest.swift */; };
+		79F71C781D3AA74C003E2D90 /* LowestCostPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D314FF1D2DEF390038D9D3 /* LowestCostPathFinder.swift */; };
+		79F71C791D3AA74F003E2D90 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D315021D2DFFCF0038D9D3 /* Board.swift */; };
+		79F71C7A1D3AA756003E2D90 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D315071D2E015C0038D9D3 /* Tile.swift */; };
+		79F71C7B1D3AA758003E2D90 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795907481D3475C600790C93 /* Path.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +54,7 @@
 		79D315091D2E01830038D9D3 /* TileTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileTest.swift; sourceTree = "<group>"; };
 		79F71C6E1D3AA486003E2D90 /* PathOfLowestCostPerformance.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PathOfLowestCostPerformance.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F71C721D3AA486003E2D90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79F71C761D3AA70C003E2D90 /* LowestCostPathFinderPerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LowestCostPathFinderPerformanceTest.swift; path = PathOfLowestCostPerformance/LowestCostPathFinderPerformanceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		79D314DE1D2DED3C0038D9D3 = {
 			isa = PBXGroup;
 			children = (
+				79F71C761D3AA70C003E2D90 /* LowestCostPathFinderPerformanceTest.swift */,
 				79D314E91D2DED3C0038D9D3 /* PathOfLowestCost */,
 				79D314F61D2DEDF30038D9D3 /* PathOfLowestCostTest */,
 				79F71C6F1D3AA486003E2D90 /* PathOfLowestCostPerformance */,
@@ -271,6 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79F71C771D3AA70C003E2D90 /* LowestCostPathFinderPerformanceTest.swift in Sources */,
+				79F71C781D3AA74C003E2D90 /* LowestCostPathFinder.swift in Sources */,
+				79F71C791D3AA74F003E2D90 /* Board.swift in Sources */,
+				79F71C7B1D3AA758003E2D90 /* Path.swift in Sources */,
+				79F71C7A1D3AA756003E2D90 /* Tile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,17 +410,20 @@
 		79F71C731D3AA486003E2D90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = PathOfLowestCostPerformance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JeffreyWolf2015.PathOfLowestCostPerformance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		79F71C741D3AA486003E2D90 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = PathOfLowestCostPerformance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";

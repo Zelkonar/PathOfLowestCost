@@ -22,6 +22,16 @@
                ReferencedContainer = "container:PathOfLowestCost.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "79F71C6D1D3AA486003E2D90"
+               BuildableName = "PathOfLowestCostPerformance.xctest"
+               BlueprintName = "PathOfLowestCostPerformance"
+               ReferencedContainer = "container:PathOfLowestCost.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <AdditionalOptions>
       </AdditionalOptions>

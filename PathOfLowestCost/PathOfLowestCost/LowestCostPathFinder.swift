@@ -13,6 +13,9 @@ class LowestCostPathFinder{
   }
   
   func findLowestCostPath(){
+    if (board == nil){
+      return
+    }
     var paths = [Path]()
     for i in 1...board!.columns{
       for j in 1...board!.rows{

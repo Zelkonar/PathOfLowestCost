@@ -34,12 +34,7 @@ class LowestCostPathFinder{
       return "No Path"
     }
     var result = String()
-    if (path.madeToOtherSideOfBoard){
-      result += "Yes"
-    }
-    else{
-      result += "No"
-    }
+    result = path.madeToOtherSideOfBoard ? "Yes" : "No"
     result += "\n\(path.lowestTotalCost!)\n"
     for row in path.pathOfLowestCost{
       result += "\(row) "

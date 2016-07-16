@@ -7,7 +7,7 @@ struct Path : Equatable{
   
   init(){}
   
-  init(madeToOtherSideOfBoard: Bool, lowestTotalCost: Int?, pathOfLowestCost: [Int]){
+  init(_ madeToOtherSideOfBoard: Bool, _ lowestTotalCost: Int?, _ pathOfLowestCost: [Int]){
     self.madeToOtherSideOfBoard = madeToOtherSideOfBoard
     self.lowestTotalCost = lowestTotalCost
     self.pathOfLowestCost = pathOfLowestCost

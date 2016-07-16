@@ -64,7 +64,7 @@ class LowestCostPathFinder{
       if (isValidToContinue(0, tileValue: tile.value)){
         return result
       }
-      result.append(Path(madeToOtherSideOfBoard: (board!.columns == column ? true : false), lowestTotalCost: tile.value, pathOfLowestCost: [row]))
+      result.append(Path((board!.columns == column ? true : false), tile.value, [row]))
     }
     else{
       let rowPlusOne = tile.row + 1 > board?.rows ? 1 : tile.row + 1
@@ -75,7 +75,7 @@ class LowestCostPathFinder{
         if (isValidToContinue(path.lowestTotalCost!, tileValue: tile.value)){
           continue
         }
-        result.append(Path(madeToOtherSideOfBoard: (board!.columns == column ? true : false), lowestTotalCost: path.lowestTotalCost! + tile.value, pathOfLowestCost: path.pathOfLowestCost + [row]))
+        result.append(Path((board!.columns == column ? true : false), path.lowestTotalCost! + tile.value, path.pathOfLowestCost + [row]))
       }
     }
     return result

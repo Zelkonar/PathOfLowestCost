@@ -175,4 +175,11 @@ class LowestCostPathFinderTest: XCTestCase {
     
     XCTAssertEqual(lowestCostPathFinder.output(), expected)
   }
+  
+  func testOutputWithNoPath(){
+    let expected = "No Path"
+    lowestCostPathFinder.board = board
+    
+    XCTAssertEqual(lowestCostPathFinder.output(), expected)
+  }
 }

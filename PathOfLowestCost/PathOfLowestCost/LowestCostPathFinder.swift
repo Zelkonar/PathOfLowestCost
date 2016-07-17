@@ -52,23 +52,21 @@ class LowestCostPathFinder{
   }
   
   private func pathToAdd(row: Int, _ column: Int, _ paths: [Path]) -> Path{
-    var result = Path()
     let tile = getUniqueTile(row: row, column: column)
     let isFinalColumn = board!.columns == column ? true : false
     
     if (column == 1 && isValidToContinue(0, tile.value)){
-      result = Path(isFinalColumn, tile.value, [row])
+      return Path(isFinalColumn, tile.value, [row])
     }
     else{
       let newPath = lowestCostPathBeforeTile(paths, tile, column)
-      if (newPath == nil){
-        return result
-      }
-      if (isValidToContinue(newPath!.lowestTotalCost!, tile.value)){
-        result = Path(isFinalColumn, newPath!.lowestTotalCost! + tile.value, newPath!.pathOfLowestCost + [row])
+      if (newPath != nil){
+        if (isValidToContinue(newPath!.lowestTotalCost!, tile.value)){
+          return Path(isFinalColumn, newPath!.lowestTotalCost! + tile.value, newPath!.pathOfLowestCost + [row])
+        }
       }
     }
-    return result
+    return Path()
   }
   
   private func maxTraverseCount(paths: [Path]) -> Int{

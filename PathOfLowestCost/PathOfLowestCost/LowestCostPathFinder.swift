@@ -21,7 +21,11 @@ class LowestCostPathFinder{
       for j in 1...board!.rows{
         paths.append(pathToAdd(j, i, paths))
       }
-      paths = paths.filter({$0.pathOfLowestCost.count == maxTraverseCount(paths)})
+      let traversalCount = maxTraverseCount(paths)
+      paths = paths.filter({$0.pathOfLowestCost.count == traversalCount})
+      if (traversalCount < i){
+        break
+      }
     }
     if (paths.isEmpty){
       return

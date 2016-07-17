@@ -39,7 +39,7 @@ class LowestCostPathFinderPerformanceTest: XCTestCase {
   private func createBoard(rows: Int, _ columns: Int, _ num: Int){
     var rowString = String()
     for column in 1...columns{
-      rowString += column % 2 == 0 ? "\(num) " : "-\(num) "
+      rowString += column % 2 == 0 ? "-\(num) " : "\(num) "
     }
     rowString = String(rowString.characters.dropLast())
     for _ in 1...rows{

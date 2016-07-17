@@ -59,8 +59,10 @@ class LowestCostPathFinder{
     let tile = getUniqueTile(row: row, column: column)
     let isFinalColumn = board!.columns == column ? true : false
     
-    if (column == 1 && isValidToContinue(0, tile.value)){
-      return Path(isFinalColumn, tile.value, [row])
+    if (column == 1){
+      if(isValidToContinue(0, tile.value)){
+        return Path(isFinalColumn, tile.value, [row])
+      }
     }
     else if(paths.isEmpty == false){
       let newPath = lowestCostPathBeforeTile(paths, tile, column)

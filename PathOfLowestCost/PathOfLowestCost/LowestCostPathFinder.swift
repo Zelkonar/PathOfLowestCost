@@ -62,13 +62,12 @@ class LowestCostPathFinder{
     if (column == 1 && isValidToContinue(0, tile.value)){
       return Path(isFinalColumn, tile.value, [row])
     }
-    else{
+    else if(paths.isEmpty == false){
       let newPath = lowestCostPathBeforeTile(paths, tile, column)
-      if (newPath != nil){
-        if (isValidToContinue(newPath!.lowestTotalCost!, tile.value)){
-          return Path(isFinalColumn, newPath!.lowestTotalCost! + tile.value, newPath!.pathOfLowestCost + [row])
-        }
+      if (isValidToContinue(newPath.lowestTotalCost!, tile.value)){
+        return Path(isFinalColumn, newPath.lowestTotalCost! + tile.value, newPath.pathOfLowestCost + [row])
       }
+      
     }
     return Path()
   }
@@ -81,12 +80,12 @@ class LowestCostPathFinder{
     return paths.minElement({$0.0.lowestTotalCost < $0.1.lowestTotalCost})!
   }
   
-  private func lowestCostPathBeforeTile(paths: [Path], _ tile: Tile, _ column: Int) -> Path?{
+  private func lowestCostPathBeforeTile(paths: [Path], _ tile: Tile, _ column: Int) -> Path{
     let rowPlusOne = tile.row + 1 > board?.rows ? 1 : tile.row + 1
     let rowMinusOne = tile.row - 1 < 1 ? board!.rows : tile.row - 1
     let rowsToAdd = [tile.row, rowPlusOne, rowMinusOne]
     let possiblePaths = paths.filter({$0.pathOfLowestCost.count == column - 1 && rowsToAdd.contains($0.pathOfLowestCost.last!)})
-    return possiblePaths.isEmpty ? nil : pathOfLowestCost(possiblePaths)
+    return pathOfLowestCost(possiblePaths)
   }
   
   private func removeTrailingWhiteSpace(s: String) -> String{

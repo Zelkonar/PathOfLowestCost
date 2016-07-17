@@ -96,6 +96,6 @@ class BoardTests: XCTestCase {
   }
   
   private func createTile(value value: Int = 0, column: Int = 0, row: Int = 0) -> Tile{
-    return Tile(value: value, column: column, row: row)
+    return Tile(value, column, row)
   }
 }

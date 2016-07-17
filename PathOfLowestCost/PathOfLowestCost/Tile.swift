@@ -5,7 +5,7 @@ class Tile : Equatable{
   let column: Int
   let row: Int
   
-  init(value: Int, column: Int, row: Int){
+  init(_ value: Int, _ column: Int, _ row: Int){
     self.value = value
     self.column = column
     self.row = row

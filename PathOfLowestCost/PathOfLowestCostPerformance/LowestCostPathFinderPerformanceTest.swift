@@ -5,7 +5,7 @@ class LowestCostPathFinderPerformanceTest: XCTestCase {
   var board = Board()
 
   func testSmallBoard(){
-    createBoard(3, 7)
+    createBoard(3, 7, 10)
     lowestCostPathFinder.board = board
     self.measureBlock{
       self.lowestCostPathFinder.findLowestCostPath()
@@ -13,7 +13,7 @@ class LowestCostPathFinderPerformanceTest: XCTestCase {
   }
   
   func testMediumBoard() {
-    createBoard(5, 50)
+    createBoard(5, 50, 10)
     lowestCostPathFinder.board = board
     self.measureBlock {
       self.lowestCostPathFinder.findLowestCostPath()
@@ -21,17 +21,17 @@ class LowestCostPathFinderPerformanceTest: XCTestCase {
   }
   
   func testHugeBoard() {
-    createBoard(10, 100)
+    createBoard(10, 100, 10)
     lowestCostPathFinder.board = board
     self.measureBlock {
       self.lowestCostPathFinder.findLowestCostPath()
     }
   }
   
-  private func createBoard(rows: Int, _ columns: Int){
+  private func createBoard(rows: Int, _ columns: Int, _ num: Int){
     var rowString = String()
     for column in 1...columns{
-      rowString += column % 2 == 0 ? "10 " : "-10 "
+      rowString += column % 2 == 0 ? "\(num) " : "-\(num) "
     }
     rowString = String(rowString.characters.dropLast())
     for _ in 1...rows{

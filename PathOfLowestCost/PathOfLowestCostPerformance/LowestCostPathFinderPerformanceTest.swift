@@ -28,6 +28,14 @@ class LowestCostPathFinderPerformanceTest: XCTestCase {
     }
   }
   
+  func testHugeBoardSmallTraversal(){
+    createBoard(10, 100, 50)
+    lowestCostPathFinder.board = board
+    self.measureBlock{
+      self.lowestCostPathFinder.findLowestCostPath()
+    }
+  }
+  
   private func createBoard(rows: Int, _ columns: Int, _ num: Int){
     var rowString = String()
     for column in 1...columns{

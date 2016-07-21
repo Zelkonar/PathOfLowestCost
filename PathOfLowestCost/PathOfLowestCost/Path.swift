@@ -1,6 +1,6 @@
 import Foundation
 
-struct Path : Equatable{
+class Path : Equatable{
   var madeToOtherSideOfBoard = false
   var lowestTotalCost: Int?
   var pathOfLowestCost = [Int]()

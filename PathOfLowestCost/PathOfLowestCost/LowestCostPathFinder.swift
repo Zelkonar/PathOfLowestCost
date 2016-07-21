@@ -34,7 +34,7 @@ class LowestCostPathFinder{
   }
   
   func output() -> String{
-    if (board == nil || path.lowestTotalCost == nil){
+    if (path.lowestTotalCost == nil){
       return "No Path"
     }
     var result = String()

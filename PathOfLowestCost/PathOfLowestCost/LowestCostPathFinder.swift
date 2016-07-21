@@ -47,27 +47,23 @@ class LowestCostPathFinder{
     return result
   }
   
-  private func getUniqueTile(row row: Int, column: Int) -> Tile{
-    return board!.tiles.filter{$0.row == row && $0.column == column}.first!
-  }
-  
   private func isValidToContinue(pathValue: Int, _ tileValue: Int) -> Bool{
     return pathValue + tileValue < maxPathCost
   }
   
   private func pathToAdd(row: Int, _ column: Int, _ paths: [Path]) -> Path{
-    let tile = getUniqueTile(row: row, column: column)
+    let tile = board!.grid[row - 1][column - 1]
     let isFinalColumn = board!.columns == column ? true : false
     
     if (column == 1){
-      if(isValidToContinue(0, tile.value)){
-        return Path(isFinalColumn, tile.value, [row])
+      if(isValidToContinue(0, tile)){
+        return Path(isFinalColumn, tile, [row])
       }
     }
     else if(paths.isEmpty == false){
-      let newPath = lowestCostPathBeforeTile(paths, tile, column)
-      if (isValidToContinue(newPath.lowestTotalCost!, tile.value)){
-        return Path(isFinalColumn, newPath.lowestTotalCost! + tile.value, newPath.pathOfLowestCost + [row])
+      let newPath = lowestCostPathBeforeTile(paths, tile, row, column)
+      if (isValidToContinue(newPath.lowestTotalCost!, tile)){
+        return Path(isFinalColumn, newPath.lowestTotalCost! + tile, newPath.pathOfLowestCost + [row])
       }
       
     }
@@ -82,10 +78,10 @@ class LowestCostPathFinder{
     return paths.minElement{$0.0.lowestTotalCost < $0.1.lowestTotalCost}!
   }
   
-  private func lowestCostPathBeforeTile(paths: [Path], _ tile: Tile, _ column: Int) -> Path{
-    let rowPlusOne = tile.row + 1 > board?.rows ? 1 : tile.row + 1
-    let rowMinusOne = tile.row - 1 < 1 ? board!.rows : tile.row - 1
-    let rowsToAdd = [tile.row, rowPlusOne, rowMinusOne]
+  private func lowestCostPathBeforeTile(paths: [Path], _ tile: Int, _ row: Int, _ column: Int) -> Path{
+    let rowPlusOne = row + 1 > board?.rows ? 1 : row + 1
+    let rowMinusOne = row - 1 < 1 ? board!.rows : row - 1
+    let rowsToAdd = [row, rowPlusOne, rowMinusOne]
     let possiblePaths = paths.filter{$0.pathOfLowestCost.count == column - 1 && rowsToAdd.contains($0.pathOfLowestCost.last!)}
     return pathOfLowestCost(possiblePaths)
   }

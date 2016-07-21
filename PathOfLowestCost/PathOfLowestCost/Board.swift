@@ -1,7 +1,7 @@
 import Foundation
 
 class Board : Equatable{
-  private(set) var tiles = [Tile]()
+  private(set) var grid = [[Int]]()
   private(set) var rows = 0
   private(set) var columns = 0
   
@@ -13,20 +13,17 @@ class Board : Equatable{
       columns = separatedRow.count
     }
     
-    var column = 0
+    var numRow = [Int]()
     for numberString in separatedRow{
-      column += 1
-      tiles.append(GetTileFromNumberString(numberString, column, rows))
+      numRow.append(Int(numberString)!)
     }
-  }
-  
-  func GetTileFromNumberString(number: String, _ column: Int, _ row: Int) -> Tile{
-    return Tile(Int(number)!, column, row)
+    
+    grid.append(numRow)
   }
 }
 
 func ==(lhs: Board, rhs: Board) -> Bool{
-  return (lhs.tiles == rhs.tiles) &&
+  return (lhs.grid == rhs.grid) &&
          (lhs.rows == rhs.rows) &&
          (lhs.columns == rhs.columns)
 }

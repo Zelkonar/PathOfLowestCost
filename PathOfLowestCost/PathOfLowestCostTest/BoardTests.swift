@@ -4,19 +4,19 @@ class BoardTests: XCTestCase {
   var board = Board()
   
   func testAddRowASimpleRow(){
-    let expected = buildTileArray([1], columns: [1], rows: [1])
+    let expected = [[Int]](arrayLiteral: [1])
     
     board.addRow("1")
     
-    XCTAssertEqual(board.tiles, expected)
+    XCTAssertEqual(board.grid, expected)
   }
   
   func testAddRowWithTwoValues(){
-    let expected = buildTileArray([2, 3], columns: [1, 2], rows: [1, 1])
+    let expected = [[Int]](arrayLiteral: [2, 3])
     
     board.addRow("2 3")
     
-    XCTAssertEqual(board.tiles, expected)
+    XCTAssertEqual(board.grid, expected)
   }
   
   func testAddRowUpdatesRowAttribute(){
@@ -49,20 +49,20 @@ class BoardTests: XCTestCase {
   }
   
   func testAddRowAddsCorrectColumnToTiles(){
-    let expected = buildTileArray([1, 2, 3], columns: [1, 2, 3], rows: [1, 1, 1])
+    let expected = [[Int]](arrayLiteral: [1, 2, 3])
     
     board.addRow("1 2 3")
     
-    XCTAssertEqual(board.tiles, expected)
+    XCTAssertEqual(board.grid, expected)
   }
   
   func testAddRowAddsCorrectRowToTiles(){
-    let expected = buildTileArray([1, 2, 3, 4, 5, 6], columns: [1, 2, 3, 1, 2, 3], rows: [1, 1, 1, 2, 2, 2])
+    let expected = [[Int]](arrayLiteral: [1, 2, 3], [4, 5, 6])
     
     board.addRow("1 2 3")
     board.addRow("4 5 6")
     
-    XCTAssertEqual(board.tiles, expected)
+    XCTAssertEqual(board.grid, expected)
   }
 
   func testEquatableWhenEqual(){
@@ -83,19 +83,5 @@ class BoardTests: XCTestCase {
     board2.addRow("2 3")
     
     XCTAssertFalse(board1 == board2)
-  }
-  
-  private func buildTileArray(values: [Int], columns: [Int], rows: [Int]) -> [Tile]{
-    var result = [Tile]()
-    
-    for index in 0...values.endIndex - 1{
-      result.append(createTile(value: values[index], column: columns[index], row: rows[index]))
-    }
-    
-    return result
-  }
-  
-  private func createTile(value value: Int = 0, column: Int = 0, row: Int = 0) -> Tile{
-    return Tile(value, column, row)
   }
 }

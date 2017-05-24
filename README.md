@@ -1,4 +1,4 @@
-#Path Of Lowest Cost#
+# Path Of Lowest Cost
 
 Pillar Technology Application Kata
 
